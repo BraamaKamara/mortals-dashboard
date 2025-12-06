@@ -1,0 +1,43 @@
+// Patch instructions for PhilosophicalMirror.jsx
+// Apply these changes manually since automated patching is disabled
+
+// ===== CHANGE 1: Add milestones to data structure (line 49) =====
+// FIND:
+      capsules: 0
+    };
+
+// REPLACE WITH:
+      capsules: 0,
+      milestones: {
+        all: [],
+        achieved: [],
+        pending: []
+      }
+    };
+
+// ===== CHANGE 2: Load milestones data (around line 165, before "const capsuleKeys") =====
+// FIND:
+      const circleData = JSON.parse(localStorage.getItem("mortals.influence.contacts") || '[]');
+      data.circleSize = circleData.length;
+      data.circleInner = circleData.filter(c => c.ring === 1);
+      data.circleMiddle = circleData.filter(c => c.ring === 2);
+      data.circleOuter = circleData.filter(c => c.ring === 3);
+
+      const capsuleKeys = [];
+
+// REPLACE WITH:
+      const circleData = JSON.parse(localStorage.getItem("mortals.influence.contacts") || '[]');
+      data.circleSize = circleData.length;
+      data.circleInner = circleData.filter(c => c.ring === 1);
+      data.circleMiddle = circleData.filter(c => c.ring === 2);
+      data.circleOuter = circleData.filter(c => c.ring === 3);
+
+      // Milestones from Storyline Arc
+      const milestonesData = JSON.parse(localStorage.getItem("mortals.milestones") || '[]');
+      data.milestones = {
+        all: milestonesData,
+        achieved: milestonesData.filter(m => m.age <= (data.age || 0)),
+        pending: milestonesData.filter(m => m.age > (data.age || 0))
+      };
+
+      const capsuleKeys = [];

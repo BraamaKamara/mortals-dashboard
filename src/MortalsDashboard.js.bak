@@ -1,0 +1,28 @@
+import React, { useEffect, useMemo, useState, useRef } from "react";
+import {
+  AlertCircle, Calendar, CalendarDays, Clock, Hourglass, Heart, RefreshCcw,
+  TimerReset, Zap, CheckCircle2, ListTodo, Plus, Trash2, BarChart2,
+  Play, Pause, RotateCcw, Timer, Sparkles, NotebookText, Feather, Crown, Users,
+  Upload, Download, X
+} from "lucide-react";
+
+export default function MortalsDashboard({ onEnterMirror }) {
+import PhilosophyCard from "./components/PhilosophyCard";
+import MoodTracker from "./components/MoodTracker";
+import EmotionHeatmap from "./components/EmotionHeatmap";
+import WeeklyMoodSummary from "./components/WeeklyMoodSummary";
+import MortalsChime from "./components/MortalsChime";
+import MortalityCurves from "./components/MortalityCurves";
+import MemoryCapsule from "./components/MemoryCapsule";
+import StorylineArc from "./components/StorylineArc";
+import MortalityAwareness from "./components/MortalityAwareness";
+import AboutPhilosophy from "./components/AboutPhilosophy";
+import LifeReviewTimeline from "./components/LifeReviewTimeline";
+import ValuesCompass from "./components/ValuesCompass";
+import ExistenceCurves from "./components/ExistenceCurves";
+import DepartureJournal from "./components/DepartureJournal";
+import CircleInfluence from "./components/CircleInfluence";
+import EpitaphGenerator from "./components/EpitaphGenerator";
+import GratitudeLedger from "./components/GratitudeLedger";
+import AskMortals from "./components/AskMortals";
+import WeeklySynthesis from "./components/WeeklySynthesis";
