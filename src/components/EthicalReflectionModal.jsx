@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Brain, ChevronRight, RefreshCw, Sparkles, MessageCircle } from "lucide-react";
+import { Brain, ChevronRight, RefreshCw, Sparkles, MessageCircle, Check } from "lucide-react";
 import ModalFramework from "./ModalFramework";
+import { ethicalReflectionService } from "../services/reflectionService";
 
 /**
  * Ethical Reflection Modal (Capstone Experience)
@@ -22,6 +23,7 @@ export default function EthicalReflectionModal({ isOpen, onClose }) {
   const [userResponse, setUserResponse] = useState("");
   const [responses, setResponses] = useState([]);
   const [showInsight, setShowInsight] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
 
   const REFLECTION_PROMPTS = [
     {
@@ -84,6 +86,10 @@ export default function EthicalReflectionModal({ isOpen, onClose }) {
         response: userResponse,
         timestamp: new Date()
       }]);
+
+      // Save to backend
+      handleSaveReflection();
+      
       setUserResponse("");
       setShowInsight(true);
 
@@ -94,6 +100,24 @@ export default function EthicalReflectionModal({ isOpen, onClose }) {
           setShowInsight(false);
         }
       }, 3000);
+    }
+  };
+
+  const handleSaveReflection = async () => {
+    setIsSaving(true);
+    try {
+      await ethicalReflectionService.saveReflection(
+        currentPrompt.id,
+        currentPrompt.category,
+        currentPrompt.question,
+        userResponse
+      );
+      console.log('[Reflection] Saved to backend');
+    } catch (error) {
+      console.error('[Reflection] Save error:', error);
+      // Still allow user to continue even if save fails (offline support)
+    } finally {
+      setIsSaving(false);
     }
   };
 
@@ -235,8 +259,14 @@ export default function EthicalReflectionModal({ isOpen, onClose }) {
                 disabled={!userResponse.trim()}
                 className="w-full px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:from-blue-600 hover:to-purple-700 transition flex items-center justify-center gap-2"
               >
-                <MessageCircle size={16} />
-                Record Reflection
+                {isSaving ? (
+                  <>Saving...</>
+                ) : (
+                  <>
+                    <MessageCircle size={16} />
+                    Record Reflection
+                  </>
+                )}
               </button>
             </motion.div>
           )}

@@ -1,7 +1,8 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { TrendingUp, AlertCircle } from "lucide-react";
+import { TrendingUp, AlertCircle, Check } from "lucide-react";
 import ModalFramework from "./ModalFramework";
+import { presenceIndexService } from "../services/reflectionService";
 
 /**
  * Presence Index Modal
@@ -20,6 +21,8 @@ export default function PresenceIndexModal({ isOpen, onClose }) {
   const [todayScore, setTodayScore] = useState(0);
   const [weekScores, setWeekScores] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
+  const [savedMessage, setSavedMessage] = useState(null);
 
   // Compute presence score from available data
   const computePresenceScore = () => {
@@ -77,6 +80,36 @@ export default function PresenceIndexModal({ isOpen, onClose }) {
     setWeekScores(week);
     setIsLoading(false);
   }, [isOpen]);
+
+  // Save presence index to backend
+  const handleSavePresence = async () => {
+    setIsSaving(true);
+    try {
+      // Compute breakdown
+      const today = new Date().toISOString().split('T')[0];
+      const reflections = JSON.parse(localStorage.getItem("mortals.reflections") || "[]");
+      const gratitudes = JSON.parse(localStorage.getItem("mortals.gratitude") || "[]");
+      const deepWorkMinutes = JSON.parse(localStorage.getItem("mortals.deepWorkToday") || "0");
+      const sleepHours = JSON.parse(localStorage.getItem("mortals.sleepHoursToday") || "0");
+
+      const breakdown = {
+        reflection: Math.min(3, reflections.filter(r => new Date(r.timestamp).toISOString().split('T')[0] === today).length),
+        gratitude: Math.min(2, gratitudes.filter(g => new Date(g.timestamp).toISOString().split('T')[0] === today).length),
+        relationships: 1,
+        deep_work: Math.min(2, Math.floor(deepWorkMinutes / 120)),
+        sleep: sleepHours >= 7 ? 1 : 0
+      };
+
+      await presenceIndexService.savePresenceIndex(Math.round(todayScore * 10), breakdown);
+      setSavedMessage('✓ Presence index saved to your timeline');
+      setTimeout(() => setSavedMessage(null), 3000);
+    } catch (error) {
+      console.error('[Presence] Save error:', error);
+      setSavedMessage('⚠ Could not save (check connection)');
+    } finally {
+      setIsSaving(false);
+    }
+  };
 
   // Determine presence level
   const getPresenceLevel = (score) => {
@@ -232,9 +265,15 @@ export default function PresenceIndexModal({ isOpen, onClose }) {
               <p className="text-sm text-purple-800 dark:text-purple-300 italic">
                 "How much of today was lived as a conscious being?"
               </p>
-              <button className="mt-3 px-3 py-1 bg-purple-600 hover:bg-purple-700 text-white text-xs font-medium rounded transition-colors">
-                Record Response
-              </button>
+              <motion.button
+                onClick={handleSavePresence}
+                disabled={isSaving}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="mt-3 px-3 py-1 bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white text-xs font-medium rounded transition-colors flex items-center gap-1"
+              >
+                {isSaving ? 'Saving...' : savedMessage ? <><Check size={14} /> {savedMessage}</> : 'Save Score'}
+              </motion.button>
             </div>
           </div>
         </motion.div>
