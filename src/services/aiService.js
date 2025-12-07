@@ -10,7 +10,7 @@ async function fetchInsights() {
     throw new Error('No authentication token found');
   }
 
-  const response = await fetch(`${API_BASE}/api/ai/insights`, {
+  const response = await fetch(`${API_BASE}/ai/insights`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
