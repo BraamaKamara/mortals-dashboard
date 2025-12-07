@@ -353,7 +353,7 @@ export default function MortalsDashboard({ onEnterMirror }) {
                     : "border-violet-300 hover:bg-violet-50 text-violet-900"
                 }`}
                 onClick={() => setIsMcmahanHubOpen(true)}
-                title="Open McMahan Enhancements Hub"
+                title="Open McMahan Enhancements Hub - Philosophy of Identity"
               >
                 <BookOpen size={18} />
                 McMahan Hub
