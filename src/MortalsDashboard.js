@@ -501,7 +501,9 @@ export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout 
                 )}
               </div>
             </div>
-            {/* Reflection Suite Buttons */}
+
+            {/* Reflection Suite Buttons + User Menu */}
+            <div className="flex items-center gap-2 md:gap-3 flex-wrap justify-end">
               <button
                 onClick={() => setOpenModal('presence')}
                 className="flex items-center gap-2 px-3 py-2 rounded-full bg-gradient-to-r from-purple-100 to-indigo-200 shadow hover:from-purple-200 hover:to-indigo-300 transition font-semibold text-sm"
@@ -546,9 +548,9 @@ export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout 
                 <Sparkles size={18} className="text-indigo-600" />
                 <span className="hidden sm:inline">Reflect</span>
               </button>
-              
+
               <MirrorModeButton active={false} onToggle={onEnterMirror} />
-              
+
               <UserMenu 
                 onLogout={onLogout}
                 onAbout={() => setIsAboutOpen(true)}
