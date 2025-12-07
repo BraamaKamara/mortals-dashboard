@@ -208,14 +208,6 @@ export const moralPresenceService = {
   }
 };
 
-export default {
-  presenceIndexService,
-  continuityTrackerService,
-  ethicalNudgeService,
-  ethicalReflectionService,
-  moralPresenceService
-};
-
 export {
   presenceIndexService,
   continuityTrackerService,
