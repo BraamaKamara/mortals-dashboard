@@ -23,6 +23,7 @@ import GratitudeLedger from './components/GratitudeLedger';
 import AskMortals from './components/AskMortals';
 import WeeklySynthesis from './components/WeeklySynthesis';
 import PhilosophyCard from './components/PhilosophyCard';
+import DegreesOfSelfSpiral from './components/DegreesOfSelfSpiral';
 
 // Utility functions
 function addYears(date, years) {
@@ -548,6 +549,7 @@ export default function MortalsDashboard({ onEnterMirror }) {
 
         {/* Philosophy and Components */}
         <PhilosophyCard />
+        <DegreesOfSelfSpiral />
         <MortalsChime />
         <MoodTracker />
         <EmotionHeatmap days={30} />
