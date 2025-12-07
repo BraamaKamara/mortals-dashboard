@@ -32,6 +32,7 @@ import LifeReel from "./components/LifeReel";
 import UserMenu from "./components/UserMenu";
 import ProfileModal from "./components/ProfileModal";
 import MirrorModeButton from "./components/MirrorModeButton";
+import PresenceIndexModal from "./components/PresenceIndexModal";
 
 // UI Components
 function Button({ variant = "default", className = "", ...props }) {
@@ -233,6 +234,9 @@ export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout 
   const [isStillnessOpen, setIsStillnessOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("dashboard");
+  
+  // Reflection Suite Modals
+  const [openModal, setOpenModal] = useState(null); // 'presence', 'continuity', 'moral-presence', 'nudges', 'ethical-reflection', null
 
   // Core settings
   const [dob, setDob] = useLocalState("mortals.dob", "");
@@ -495,6 +499,17 @@ export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout 
             </div>
             <div className="flex items-center gap-4">
               <MirrorModeButton active={false} onToggle={onEnterMirror} />
+              
+              {/* Reflection Suite Button */}
+              <button
+                onClick={() => setOpenModal('presence')}
+                className="flex items-center gap-2 px-3 py-2 rounded-full bg-gradient-to-r from-purple-100 to-indigo-200 shadow hover:from-purple-200 hover:to-indigo-300 transition font-semibold text-sm"
+                title="Open Reflection Suite"
+              >
+                <Heart size={18} className="text-purple-600" />
+                <span className="hidden sm:inline">Presence</span>
+              </button>
+              
               <UserMenu 
                 onLogout={onLogout}
                 onAbout={() => setIsAboutOpen(true)}
@@ -1205,6 +1220,13 @@ export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout 
         open={isAboutOpen} 
         onClose={() => setIsAboutOpen(false)} 
       />
+      
+      {/* Reflection Suite Modals */}
+      <PresenceIndexModal 
+        isOpen={openModal === 'presence'} 
+        onClose={() => setOpenModal(null)} 
+      />
+      
       <StillnessModal open={isStillnessOpen} onClose={() => setIsStillnessOpen(false)} seconds={10} />
     </div>
   );

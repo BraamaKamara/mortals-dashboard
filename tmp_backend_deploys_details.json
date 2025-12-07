@@ -1,0 +1,58 @@
+﻿[
+    {
+        "id":  "dpl_CBNzFzTdPcXj6FBjykJETzV2GtJg",
+        "url":  "mortals-backend-g6dtyqneq-braamakamaras-projects.vercel.app",
+        "state":  null,
+        "created":  null,
+        "target":  "production",
+        "project":  "prj_r5hT1LkI2C3VWg4NcWh1LIeLrT5d",
+        "meta":  {
+                     "githubCommitAuthorName":  "Braama Kamara",
+                     "githubCommitAuthorEmail":  "braamakamara@outlook.com",
+                     "githubCommitMessage":  "Clean initial commit (no secrets, .env excluded)",
+                     "githubCommitOrg":  "BraamaKamara",
+                     "githubCommitRef":  "clean-init-main",
+                     "githubCommitRepo":  "mortals-backend",
+                     "githubCommitSha":  "83e0974d2cb408c3e172614ccf124d70b19e72b0",
+                     "githubDeployment":  "1",
+                     "githubOrg":  "BraamaKamara",
+                     "githubRepo":  "mortals-backend",
+                     "githubRepoOwnerType":  "User",
+                     "githubCommitRepoId":  "1111006774",
+                     "githubRepoId":  "1111006774",
+                     "githubRepoVisibility":  "public",
+                     "githubHost":  "github.com",
+                     "githubCommitAuthorLogin":  "BraamaKamara",
+                     "branchAlias":  "mortals-backend-git-clean-init-main-braamakamaras-projects.vercel.app",
+                     "action":  "redeploy",
+                     "originalDeploymentId":  "dpl_3Wk2jkg3wzmoodaENydqHnqtpvMV"
+                 }
+    },
+    {
+        "id":  "dpl_3Wk2jkg3wzmoodaENydqHnqtpvMV",
+        "url":  "mortals-backend-n9epk0e2n-braamakamaras-projects.vercel.app",
+        "state":  null,
+        "created":  null,
+        "target":  "production",
+        "project":  "prj_r5hT1LkI2C3VWg4NcWh1LIeLrT5d",
+        "meta":  {
+                     "githubCommitAuthorName":  "Braama Kamara",
+                     "githubCommitAuthorEmail":  "braamakamara@outlook.com",
+                     "githubCommitMessage":  "Clean initial commit (no secrets, .env excluded)",
+                     "githubCommitOrg":  "BraamaKamara",
+                     "githubCommitRef":  "clean-init-main",
+                     "githubCommitRepo":  "mortals-backend",
+                     "githubCommitSha":  "83e0974d2cb408c3e172614ccf124d70b19e72b0",
+                     "githubDeployment":  "1",
+                     "githubOrg":  "BraamaKamara",
+                     "githubRepo":  "mortals-backend",
+                     "githubRepoOwnerType":  "User",
+                     "githubCommitRepoId":  "1111006774",
+                     "githubRepoId":  "1111006774",
+                     "githubRepoVisibility":  "public",
+                     "githubHost":  "github.com",
+                     "githubCommitAuthorLogin":  "BraamaKamara",
+                     "branchAlias":  "mortals-backend-git-clean-init-main-braamakamaras-projects.vercel.app"
+                 }
+    }
+]

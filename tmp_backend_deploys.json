@@ -1,0 +1,107 @@
+﻿{
+    "deployments":  [
+                        {
+                            "uid":  "dpl_CBNzFzTdPcXj6FBjykJETzV2GtJg",
+                            "name":  "mortals-backend",
+                            "projectId":  "prj_r5hT1LkI2C3VWg4NcWh1LIeLrT5d",
+                            "url":  "mortals-backend-g6dtyqneq-braamakamaras-projects.vercel.app",
+                            "created":  1765000402012,
+                            "source":  "redeploy",
+                            "state":  "READY",
+                            "readyState":  "READY",
+                            "readySubstate":  "PROMOTED",
+                            "type":  "LAMBDAS",
+                            "creator":  {
+                                            "uid":  "TkuXyCUhJTWm55FINgvDSNI6",
+                                            "email":  "braamakamara@outlook.com",
+                                            "username":  "braamakamara",
+                                            "githubLogin":  "BraamaKamara"
+                                        },
+                            "inspectorUrl":  "https://vercel.com/braamakamaras-projects/mortals-backend/CBNzFzTdPcXj6FBjykJETzV2GtJg",
+                            "meta":  {
+                                         "githubCommitAuthorName":  "Braama Kamara",
+                                         "githubCommitAuthorEmail":  "braamakamara@outlook.com",
+                                         "githubCommitMessage":  "Clean initial commit (no secrets, .env excluded)",
+                                         "githubCommitOrg":  "BraamaKamara",
+                                         "githubCommitRef":  "clean-init-main",
+                                         "githubCommitRepo":  "mortals-backend",
+                                         "githubCommitSha":  "83e0974d2cb408c3e172614ccf124d70b19e72b0",
+                                         "githubDeployment":  "1",
+                                         "githubOrg":  "BraamaKamara",
+                                         "githubRepo":  "mortals-backend",
+                                         "githubRepoOwnerType":  "User",
+                                         "githubCommitRepoId":  "1111006774",
+                                         "githubRepoId":  "1111006774",
+                                         "githubRepoVisibility":  "public",
+                                         "githubHost":  "github.com",
+                                         "githubCommitAuthorLogin":  "BraamaKamara",
+                                         "branchAlias":  "mortals-backend-git-clean-init-main-braamakamaras-projects.vercel.app",
+                                         "action":  "redeploy",
+                                         "originalDeploymentId":  "dpl_3Wk2jkg3wzmoodaENydqHnqtpvMV"
+                                     },
+                            "target":  "production",
+                            "aliasError":  null,
+                            "aliasAssigned":  1765000415317,
+                            "isRollbackCandidate":  true,
+                            "createdAt":  1765000402012,
+                            "buildingAt":  1765000403395,
+                            "ready":  1765000415110,
+                            "projectSettings":  {
+                                                    "commandForIgnoringBuildStep":  null
+                                                }
+                        },
+                        {
+                            "uid":  "dpl_3Wk2jkg3wzmoodaENydqHnqtpvMV",
+                            "name":  "mortals-backend",
+                            "projectId":  "prj_r5hT1LkI2C3VWg4NcWh1LIeLrT5d",
+                            "url":  "mortals-backend-n9epk0e2n-braamakamaras-projects.vercel.app",
+                            "created":  1764999308104,
+                            "source":  "import",
+                            "state":  "READY",
+                            "readyState":  "READY",
+                            "readySubstate":  "PROMOTED",
+                            "type":  "LAMBDAS",
+                            "creator":  {
+                                            "uid":  "TkuXyCUhJTWm55FINgvDSNI6",
+                                            "email":  "braamakamara@outlook.com",
+                                            "username":  "braamakamara",
+                                            "githubLogin":  "BraamaKamara"
+                                        },
+                            "inspectorUrl":  "https://vercel.com/braamakamaras-projects/mortals-backend/3Wk2jkg3wzmoodaENydqHnqtpvMV",
+                            "meta":  {
+                                         "githubCommitAuthorName":  "Braama Kamara",
+                                         "githubCommitAuthorEmail":  "braamakamara@outlook.com",
+                                         "githubCommitMessage":  "Clean initial commit (no secrets, .env excluded)",
+                                         "githubCommitOrg":  "BraamaKamara",
+                                         "githubCommitRef":  "clean-init-main",
+                                         "githubCommitRepo":  "mortals-backend",
+                                         "githubCommitSha":  "83e0974d2cb408c3e172614ccf124d70b19e72b0",
+                                         "githubDeployment":  "1",
+                                         "githubOrg":  "BraamaKamara",
+                                         "githubRepo":  "mortals-backend",
+                                         "githubRepoOwnerType":  "User",
+                                         "githubCommitRepoId":  "1111006774",
+                                         "githubRepoId":  "1111006774",
+                                         "githubRepoVisibility":  "public",
+                                         "githubHost":  "github.com",
+                                         "githubCommitAuthorLogin":  "BraamaKamara",
+                                         "branchAlias":  "mortals-backend-git-clean-init-main-braamakamaras-projects.vercel.app"
+                                     },
+                            "target":  "production",
+                            "aliasError":  null,
+                            "aliasAssigned":  1764999321084,
+                            "isRollbackCandidate":  true,
+                            "createdAt":  1764999308104,
+                            "buildingAt":  1764999309589,
+                            "ready":  1764999320901,
+                            "projectSettings":  {
+                                                    "commandForIgnoringBuildStep":  null
+                                                }
+                        }
+                    ],
+    "pagination":  {
+                       "count":  2,
+                       "next":  null,
+                       "prev":  1765000402012
+                   }
+}

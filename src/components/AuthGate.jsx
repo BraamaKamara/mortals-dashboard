@@ -114,7 +114,13 @@ export default function AuthGate({ onAuthenticated }) {
       const data = await response.json();
 
       if (response.ok) {
-        setMessage("Verification code sent to your email! Check your inbox.");
+        if (data?.delivery === 'skipped' && data?.pin) {
+          setMessage(`Email delivery is not configured. Use this verification code: ${data.pin}`);
+          setVerificationPin(data.pin);
+        } else {
+          setMessage("Verification code sent to your email! Check your inbox.");
+        }
+
         setPinExpiry(Date.now() + (data.expiresIn * 1000));
         setMode("verify-email");
       } else {

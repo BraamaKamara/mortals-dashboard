@@ -1,0 +1,607 @@
+﻿{
+    "accountId":  "team_9ZEtzQILvj1KzFecmfSkNtrA",
+    "speedInsights":  {
+                          "id":  "bv861FysyOB7cAt2zuC4rRQbmC9",
+                          "hasData":  false
+                      },
+    "autoExposeSystemEnvs":  true,
+    "autoAssignCustomDomains":  true,
+    "autoAssignCustomDomainsUpdatedBy":  "system",
+    "buildCommand":  null,
+    "createdAt":  1764999305007,
+    "crons":  {
+                  "enabledAt":  1764999321227,
+                  "disabledAt":  null,
+                  "updatedAt":  1765000415397,
+                  "deploymentId":  "dpl_CBNzFzTdPcXj6FBjykJETzV2GtJg",
+                  "definitions":  [
+
+                                  ]
+              },
+    "devCommand":  null,
+    "directoryListing":  false,
+    "env":  [
+                {
+                    "target":  [
+                                   "development",
+                                   "preview",
+                                   "production"
+                               ],
+                    "configurationId":  null,
+                    "customEnvironmentIds":  [
+
+                                             ],
+                    "id":  "dPi6xkEKEq9A4udu",
+                    "key":  "EMAIL_SERVICE",
+                    "createdAt":  1765000335781,
+                    "updatedAt":  1765000335781,
+                    "createdBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                    "updatedBy":  null,
+                    "type":  "encrypted",
+                    "value":  "21y2JdB0JAm3t7v8EfXqI/H3p7W/Xq6ZvbIq1Opwc9w="
+                },
+                {
+                    "target":  [
+                                   "development",
+                                   "preview",
+                                   "production"
+                               ],
+                    "configurationId":  null,
+                    "customEnvironmentIds":  [
+
+                                             ],
+                    "id":  "lBjLyRXuwYpprndG",
+                    "key":  "EMAIL_USER",
+                    "createdAt":  1765000335781,
+                    "updatedAt":  1765000335781,
+                    "createdBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                    "updatedBy":  null,
+                    "type":  "encrypted",
+                    "value":  "pa5JV+LjLXdaAw+XYlgBufooKcQLISqHFPMplaHnQQkTC+pv/gLeWxqRZFtAO7b1"
+                },
+                {
+                    "target":  [
+                                   "development",
+                                   "preview",
+                                   "production"
+                               ],
+                    "configurationId":  null,
+                    "customEnvironmentIds":  [
+
+                                             ],
+                    "id":  "MdXr728OFIsh4pYO",
+                    "key":  "EMAIL_PASSWORD",
+                    "createdAt":  1765000335781,
+                    "updatedAt":  1765000335781,
+                    "createdBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                    "updatedBy":  null,
+                    "type":  "encrypted",
+                    "value":  "5mVIbsNnSf0GTuagcxTpFlMyY4mqWO/krgcuh/2gSh6IVD3N6zPsu2yhYJax80OC"
+                },
+                {
+                    "target":  [
+                                   "development",
+                                   "preview",
+                                   "production"
+                               ],
+                    "configurationId":  null,
+                    "customEnvironmentIds":  [
+
+                                             ],
+                    "id":  "0eOQemvQV2qb1g8y",
+                    "key":  "STRIPE_SECRET_KEY",
+                    "createdAt":  1765000335781,
+                    "updatedAt":  1765000335781,
+                    "createdBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                    "updatedBy":  null,
+                    "type":  "encrypted",
+                    "value":  "x40G11Ow1lsW1rrg5BIRRxt3ROegL9aGiHZhpK3w0hNNLhf75StVwq/RNuyZvkDR/k8UnvmBE+M/08NCZ9BEBdd+kUW1ITbIXh/SlZekmzJ9ow+B6LWWIv4yx1yzk9Md"
+                },
+                {
+                    "target":  [
+                                   "development",
+                                   "preview",
+                                   "production"
+                               ],
+                    "configurationId":  null,
+                    "customEnvironmentIds":  [
+
+                                             ],
+                    "id":  "kARCvq7an9KJMObR",
+                    "key":  "STRIPE_WEBHOOK_SECRET",
+                    "createdAt":  1765000335781,
+                    "updatedAt":  1765000335781,
+                    "createdBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                    "updatedBy":  null,
+                    "type":  "encrypted",
+                    "value":  "TzAB20oDymAdb8e9QEfzWNRpYy3XCyJ7jqtfhdSSnfJMVbad9dGmgkLQJaEMQEU7wIuj2PAWTrwHrqJZ8HPDkSCqtVtbfDm/p0c7IiQhZYk="
+                },
+                {
+                    "target":  [
+                                   "development",
+                                   "preview",
+                                   "production"
+                               ],
+                    "configurationId":  null,
+                    "customEnvironmentIds":  [
+
+                                             ],
+                    "id":  "gbsLMWWzDrLfJdMh",
+                    "key":  "STRIPE_PRICE_PRO",
+                    "createdAt":  1765000335781,
+                    "updatedAt":  1765000335781,
+                    "createdBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                    "updatedBy":  null,
+                    "type":  "encrypted",
+                    "value":  "TElhU4xIFZkdywH/7fgsucGyJjXoCcWSEhccxf7Ud9SvDVLJDgGvsP/PuYP7guF0zPKAPYB0QY5QQSJ5dDm3pIhvIx5eyZziJKgUDzkGqFBXbB1ZRMp7Wl/Ft10xfyfI"
+                },
+                {
+                    "target":  [
+                                   "development",
+                                   "preview",
+                                   "production"
+                               ],
+                    "configurationId":  null,
+                    "customEnvironmentIds":  [
+
+                                             ],
+                    "id":  "sKYAXRhdJhL7HWKH",
+                    "key":  "FRONTEND_URL",
+                    "createdAt":  1765000335781,
+                    "updatedAt":  1765003747198,
+                    "createdBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                    "updatedBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                    "type":  "encrypted",
+                    "value":  "LrpUq3yUyCaoLA5s9j0y/XfF9KqHtNX8fC9cHeQgzlpR1TS/5kEaNo9605/ZB6WnFlwHIYDYEkM6SEbW7qWaOg=="
+                },
+                {
+                    "target":  [
+                                   "development",
+                                   "preview",
+                                   "production"
+                               ],
+                    "configurationId":  null,
+                    "customEnvironmentIds":  [
+
+                                             ],
+                    "id":  "BskHE7tjZWvUtn7n",
+                    "key":  "CLIENT_URL",
+                    "createdAt":  1765000335781,
+                    "updatedAt":  1765003749243,
+                    "createdBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                    "updatedBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                    "type":  "encrypted",
+                    "value":  "cLyGA3oyOlxXqyd2Mbx47kmLoE6F3SwHji3SlRZDTvVcA2trgENoWqHavP3PagergSsWVzhqW0UAD9kGoTPJSQ=="
+                },
+                {
+                    "target":  [
+                                   "development",
+                                   "preview",
+                                   "production"
+                               ],
+                    "configurationId":  null,
+                    "customEnvironmentIds":  [
+
+                                             ],
+                    "id":  "jdulsK5OCU3sC6mY",
+                    "key":  "STRIPE_SUCCESS_URL",
+                    "createdAt":  1765000335781,
+                    "updatedAt":  1765003750104,
+                    "createdBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                    "updatedBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                    "type":  "encrypted",
+                    "value":  "dHjIYe7t5sGNaLxaENVYuEZImjMUtropiWdNvSEUjnTb/FV/gKBYKIMLPrsGZviwRb3aWxee+JOxNOCtcgioWRrlYf8QPd9D8WiaVf1kD2I="
+                },
+                {
+                    "target":  [
+                                   "development",
+                                   "preview",
+                                   "production"
+                               ],
+                    "configurationId":  null,
+                    "customEnvironmentIds":  [
+
+                                             ],
+                    "id":  "saoIZFbYiBKJqHKu",
+                    "key":  "STRIPE_CANCEL_URL",
+                    "createdAt":  1765000335781,
+                    "updatedAt":  1765003751188,
+                    "createdBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                    "updatedBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                    "type":  "encrypted",
+                    "value":  "9AgDWobbOQ4Wg1H4/v4Rk5xFm0HGgd9lxodmurTYYP5eJFfKx61aMo9OlMoVnGS8xDzDXgmP6WxzQh6g+NTSJGSUj7+/C5MwiF5RTgLJjGQ="
+                },
+                {
+                    "target":  [
+                                   "development",
+                                   "preview",
+                                   "production"
+                               ],
+                    "configurationId":  null,
+                    "customEnvironmentIds":  [
+
+                                             ],
+                    "id":  "HQBqiS1V4ukRE7zs",
+                    "key":  "STRIPE_PORTAL_RETURN_URL",
+                    "createdAt":  1765000335781,
+                    "updatedAt":  1765000335781,
+                    "createdBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                    "updatedBy":  null,
+                    "type":  "encrypted",
+                    "value":  "JurH6rE+Q9MMwBWJNjFtaPa/n00ZZgHTUA2OkKACy/nafy4bXCxb/n9wCwwysYv0"
+                },
+                {
+                    "target":  [
+                                   "development",
+                                   "preview",
+                                   "production"
+                               ],
+                    "configurationId":  null,
+                    "customEnvironmentIds":  [
+
+                                             ],
+                    "id":  "vIn3Ae9Je1Ao2ruD",
+                    "key":  "DATABASE_URL",
+                    "createdAt":  1765000335782,
+                    "updatedAt":  1765000335782,
+                    "createdBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                    "updatedBy":  null,
+                    "type":  "encrypted",
+                    "value":  "wLo9SGP5JKD7BVgaIWNu68JOQQOHsBofUWxzyD+fwwzLvcyCEW8txgKN/l9Tt7BG1jBpw3zZzDdwVuLiQKEyB97KgLSz4p/eoawmgNASPKcpQ7/Y/KqvkUsXwC/z2h0o1yhhMRVEEHa4BjWRnLnjt8OmYvNYfYHhLdSMkIoq2xBdwO8BTVDvvMR6+dZyPgtOd9OXU3nugFS2LIqpXExcJwjZamxTZx5GEujhfJufoIw="
+                },
+                {
+                    "target":  [
+                                   "development",
+                                   "preview",
+                                   "production"
+                               ],
+                    "configurationId":  null,
+                    "customEnvironmentIds":  [
+
+                                             ],
+                    "id":  "rcgrOB0rO2lQIDEF",
+                    "key":  "NODE_ENV",
+                    "createdAt":  1765000335782,
+                    "updatedAt":  1765000335782,
+                    "createdBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                    "updatedBy":  null,
+                    "type":  "encrypted",
+                    "value":  "MsNrtEEFj6XIjEEEIoEBvt47lwIxxxLYbgHPQIeQiAU="
+                },
+                {
+                    "target":  [
+                                   "development",
+                                   "preview",
+                                   "production"
+                               ],
+                    "configurationId":  null,
+                    "customEnvironmentIds":  [
+
+                                             ],
+                    "id":  "GCpD8NBAG5OJynqJ",
+                    "key":  "JWT_SECRET",
+                    "createdAt":  1765000335782,
+                    "updatedAt":  1765000335782,
+                    "createdBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                    "updatedBy":  null,
+                    "type":  "encrypted",
+                    "value":  "1pXrjxUMIQbXix+Q4akuYhX1xriz55bGS2v8jph81CaB5/VEdEi3piKyY4PL30JYpRwo06p2T/yEysBqYH4zj/o5trwUlYWn4/MXQUe03ht4jEqIsiCUe8ivPJ1j9HNl"
+                }
+            ],
+    "framework":  "express",
+    "gitForkProtection":  true,
+    "gitLFS":  false,
+    "id":  "prj_r5hT1LkI2C3VWg4NcWh1LIeLrT5d",
+    "installCommand":  null,
+    "lastRollbackTarget":  null,
+    "lastAliasRequest":  null,
+    "name":  "mortals-backend",
+    "nodeVersion":  "24.x",
+    "outputDirectory":  null,
+    "productionDeploymentsFastLane":  true,
+    "publicSource":  true,
+    "defaultResourceConfig":  {
+                                  "fluid":  true,
+                                  "functionDefaultRegions":  [
+                                                                 "iad1"
+                                                             ],
+                                  "functionDefaultTimeout":  300,
+                                  "functionDefaultMemoryType":  "standard",
+                                  "functionZeroConfigFailover":  false,
+                                  "elasticConcurrencyEnabled":  false
+                              },
+    "resourceConfig":  {
+                           "fluid":  true,
+                           "functionDefaultRegions":  [
+                                                          "iad1"
+                                                      ]
+                       },
+    "rootDirectory":  null,
+    "serverlessFunctionRegion":  "iad1",
+    "sourceFilesOutsideRootDirectory":  true,
+    "ssoProtection":  {
+                          "deploymentType":  "all_except_custom_domains"
+                      },
+    "updatedAt":  1765007399957,
+    "live":  false,
+    "gitComments":  {
+                        "onCommit":  false,
+                        "onPullRequest":  true
+                    },
+    "gitProviderOptions":  {
+                               "createDeployments":  "enabled"
+                           },
+    "webAnalytics":  {
+                         "id":  "GcuJchwlSl9uFP2AKxvzqtlEx"
+                     },
+    "oidcTokenConfig":  {
+                            "enabled":  true,
+                            "issuerMode":  "team"
+                        },
+    "hasDeployments":  true,
+    "link":  {
+                 "type":  "github",
+                 "repo":  "mortals-backend",
+                 "repoId":  1111006774,
+                 "org":  "BraamaKamara",
+                 "repoOwnerId":  210974616,
+                 "gitCredentialId":  "cred_6075e47a17e2daf2958cd55446020017b1cefa70",
+                 "productionBranch":  "main",
+                 "sourceless":  true,
+                 "createdAt":  1764999304963,
+                 "updatedAt":  1764999304963,
+                 "deployHooks":  [
+
+                                 ]
+             },
+    "latestDeployments":  [
+                              {
+                                  "alias":  [
+                                                "mortals-backend.vercel.app",
+                                                "mortals-backend-braamakamaras-projects.vercel.app",
+                                                "mortals-backend-git-clean-init-main-braamakamaras-projects.vercel.app"
+                                            ],
+                                  "aliasAssigned":  1765000415317,
+                                  "aliasError":  null,
+                                  "automaticAliases":  [
+                                                           "mortals-backend-braamakamaras-projects.vercel.app",
+                                                           "mortals-backend-git-clean-init-main-braamakamaras-projects.vercel.app"
+                                                       ],
+                                  "builds":  [
+                                                 {
+                                                     "src":  "index.js",
+                                                     "use":  "@vercel/node"
+                                                 }
+                                             ],
+                                  "createdAt":  1765000402012,
+                                  "createdIn":  "sfo1",
+                                  "creator":  {
+                                                  "uid":  "TkuXyCUhJTWm55FINgvDSNI6",
+                                                  "email":  "braamakamara@outlook.com",
+                                                  "username":  "braamakamara",
+                                                  "githubLogin":  "BraamaKamara"
+                                              },
+                                  "deploymentHostname":  "mortals-backend-g6dtyqneq-braamakamaras-projects",
+                                  "forced":  true,
+                                  "id":  "dpl_CBNzFzTdPcXj6FBjykJETzV2GtJg",
+                                  "meta":  {
+                                               "githubCommitAuthorName":  "Braama Kamara",
+                                               "githubCommitAuthorEmail":  "braamakamara@outlook.com",
+                                               "githubCommitMessage":  "Clean initial commit (no secrets, .env excluded)",
+                                               "githubCommitOrg":  "BraamaKamara",
+                                               "githubCommitRef":  "clean-init-main",
+                                               "githubCommitRepo":  "mortals-backend",
+                                               "githubCommitSha":  "83e0974d2cb408c3e172614ccf124d70b19e72b0",
+                                               "githubDeployment":  "1",
+                                               "githubOrg":  "BraamaKamara",
+                                               "githubRepo":  "mortals-backend",
+                                               "githubRepoOwnerType":  "User",
+                                               "githubCommitRepoId":  "1111006774",
+                                               "githubRepoId":  "1111006774",
+                                               "githubRepoVisibility":  "public",
+                                               "githubHost":  "github.com",
+                                               "githubCommitAuthorLogin":  "BraamaKamara",
+                                               "branchAlias":  "mortals-backend-git-clean-init-main-braamakamaras-projects.vercel.app",
+                                               "action":  "redeploy",
+                                               "originalDeploymentId":  "dpl_3Wk2jkg3wzmoodaENydqHnqtpvMV"
+                                           },
+                                  "name":  "mortals-backend",
+                                  "plan":  "hobby",
+                                  "private":  false,
+                                  "readyState":  "READY",
+                                  "readySubstate":  "PROMOTED",
+                                  "target":  "production",
+                                  "teamId":  "team_9ZEtzQILvj1KzFecmfSkNtrA",
+                                  "type":  "LAMBDAS",
+                                  "url":  "mortals-backend-g6dtyqneq-braamakamaras-projects.vercel.app",
+                                  "userId":  "TkuXyCUhJTWm55FINgvDSNI6",
+                                  "withCache":  false,
+                                  "buildingAt":  1765000403395,
+                                  "readyAt":  1765000415110,
+                                  "previewCommentsEnabled":  true,
+                                  "oidcTokenClaims":  {
+                                                          "sub":  "owner:braamakamaras-projects:project:mortals-backend:environment:production",
+                                                          "iss":  "https://oidc.vercel.com/braamakamaras-projects",
+                                                          "scope":  "owner:braamakamaras-projects:project:mortals-backend:environment:production",
+                                                          "aud":  "https://vercel.com/braamakamaras-projects",
+                                                          "owner":  "braamakamaras-projects",
+                                                          "owner_id":  "team_9ZEtzQILvj1KzFecmfSkNtrA",
+                                                          "project":  "mortals-backend",
+                                                          "project_id":  "prj_r5hT1LkI2C3VWg4NcWh1LIeLrT5d",
+                                                          "environment":  "production",
+                                                          "plan":  "hobby"
+                                                      }
+                              },
+                              {
+                                  "alias":  [
+                                                "mortals-backend.vercel.app",
+                                                "mortals-backend-braamakamaras-projects.vercel.app",
+                                                "mortals-backend-git-clean-init-main-braamakamaras-projects.vercel.app"
+                                            ],
+                                  "aliasAssigned":  1764999321084,
+                                  "aliasError":  null,
+                                  "automaticAliases":  [
+                                                           "mortals-backend-braamakamaras-projects.vercel.app",
+                                                           "mortals-backend-git-clean-init-main-braamakamaras-projects.vercel.app"
+                                                       ],
+                                  "builds":  [
+                                                 {
+                                                     "src":  "index.js",
+                                                     "use":  "@vercel/node"
+                                                 }
+                                             ],
+                                  "createdAt":  1764999308104,
+                                  "createdIn":  "sfo1",
+                                  "creator":  {
+                                                  "uid":  "TkuXyCUhJTWm55FINgvDSNI6",
+                                                  "email":  "braamakamara@outlook.com",
+                                                  "username":  "braamakamara",
+                                                  "githubLogin":  "BraamaKamara"
+                                              },
+                                  "deploymentHostname":  "mortals-backend-n9epk0e2n-braamakamaras-projects",
+                                  "forced":  false,
+                                  "id":  "dpl_3Wk2jkg3wzmoodaENydqHnqtpvMV",
+                                  "meta":  {
+                                               "githubCommitAuthorName":  "Braama Kamara",
+                                               "githubCommitAuthorEmail":  "braamakamara@outlook.com",
+                                               "githubCommitMessage":  "Clean initial commit (no secrets, .env excluded)",
+                                               "githubCommitOrg":  "BraamaKamara",
+                                               "githubCommitRef":  "clean-init-main",
+                                               "githubCommitRepo":  "mortals-backend",
+                                               "githubCommitSha":  "83e0974d2cb408c3e172614ccf124d70b19e72b0",
+                                               "githubDeployment":  "1",
+                                               "githubOrg":  "BraamaKamara",
+                                               "githubRepo":  "mortals-backend",
+                                               "githubRepoOwnerType":  "User",
+                                               "githubCommitRepoId":  "1111006774",
+                                               "githubRepoId":  "1111006774",
+                                               "githubRepoVisibility":  "public",
+                                               "githubHost":  "github.com",
+                                               "githubCommitAuthorLogin":  "BraamaKamara",
+                                               "branchAlias":  "mortals-backend-git-clean-init-main-braamakamaras-projects.vercel.app"
+                                           },
+                                  "name":  "mortals-backend",
+                                  "plan":  "hobby",
+                                  "private":  false,
+                                  "readyState":  "READY",
+                                  "readySubstate":  "PROMOTED",
+                                  "target":  "production",
+                                  "teamId":  "team_9ZEtzQILvj1KzFecmfSkNtrA",
+                                  "type":  "LAMBDAS",
+                                  "url":  "mortals-backend-n9epk0e2n-braamakamaras-projects.vercel.app",
+                                  "userId":  "TkuXyCUhJTWm55FINgvDSNI6",
+                                  "withCache":  false,
+                                  "buildingAt":  1764999309589,
+                                  "readyAt":  1764999320901,
+                                  "previewCommentsEnabled":  true,
+                                  "oidcTokenClaims":  {
+                                                          "sub":  "owner:braamakamaras-projects:project:mortals-backend:environment:production",
+                                                          "iss":  "https://oidc.vercel.com/braamakamaras-projects",
+                                                          "scope":  "owner:braamakamaras-projects:project:mortals-backend:environment:production",
+                                                          "aud":  "https://vercel.com/braamakamaras-projects",
+                                                          "owner":  "braamakamaras-projects",
+                                                          "owner_id":  "team_9ZEtzQILvj1KzFecmfSkNtrA",
+                                                          "project":  "mortals-backend",
+                                                          "project_id":  "prj_r5hT1LkI2C3VWg4NcWh1LIeLrT5d",
+                                                          "environment":  "production",
+                                                          "plan":  "hobby"
+                                                      }
+                              }
+                          ],
+    "targets":  {
+                    "production":  {
+                                       "alias":  [
+                                                     "mortals-backend.vercel.app",
+                                                     "mortals-backend-braamakamaras-projects.vercel.app",
+                                                     "mortals-backend-git-clean-init-main-braamakamaras-projects.vercel.app"
+                                                 ],
+                                       "aliasAssigned":  1765000415317,
+                                       "aliasError":  null,
+                                       "automaticAliases":  [
+                                                                "mortals-backend-braamakamaras-projects.vercel.app",
+                                                                "mortals-backend-git-clean-init-main-braamakamaras-projects.vercel.app"
+                                                            ],
+                                       "builds":  [
+                                                      {
+                                                          "src":  "index.js",
+                                                          "use":  "@vercel/node"
+                                                      }
+                                                  ],
+                                       "createdAt":  1765000402012,
+                                       "createdIn":  "sfo1",
+                                       "creator":  {
+                                                       "uid":  "TkuXyCUhJTWm55FINgvDSNI6",
+                                                       "email":  "braamakamara@outlook.com",
+                                                       "username":  "braamakamara",
+                                                       "githubLogin":  "BraamaKamara"
+                                                   },
+                                       "deploymentHostname":  "mortals-backend-g6dtyqneq-braamakamaras-projects",
+                                       "forced":  true,
+                                       "id":  "dpl_CBNzFzTdPcXj6FBjykJETzV2GtJg",
+                                       "meta":  {
+                                                    "githubCommitAuthorName":  "Braama Kamara",
+                                                    "githubCommitAuthorEmail":  "braamakamara@outlook.com",
+                                                    "githubCommitMessage":  "Clean initial commit (no secrets, .env excluded)",
+                                                    "githubCommitOrg":  "BraamaKamara",
+                                                    "githubCommitRef":  "clean-init-main",
+                                                    "githubCommitRepo":  "mortals-backend",
+                                                    "githubCommitSha":  "83e0974d2cb408c3e172614ccf124d70b19e72b0",
+                                                    "githubDeployment":  "1",
+                                                    "githubOrg":  "BraamaKamara",
+                                                    "githubRepo":  "mortals-backend",
+                                                    "githubRepoOwnerType":  "User",
+                                                    "githubCommitRepoId":  "1111006774",
+                                                    "githubRepoId":  "1111006774",
+                                                    "githubRepoVisibility":  "public",
+                                                    "githubHost":  "github.com",
+                                                    "githubCommitAuthorLogin":  "BraamaKamara",
+                                                    "branchAlias":  "mortals-backend-git-clean-init-main-braamakamaras-projects.vercel.app",
+                                                    "action":  "redeploy",
+                                                    "originalDeploymentId":  "dpl_3Wk2jkg3wzmoodaENydqHnqtpvMV"
+                                                },
+                                       "name":  "mortals-backend",
+                                       "plan":  "hobby",
+                                       "private":  false,
+                                       "readyState":  "READY",
+                                       "readySubstate":  "PROMOTED",
+                                       "target":  "production",
+                                       "teamId":  "team_9ZEtzQILvj1KzFecmfSkNtrA",
+                                       "type":  "LAMBDAS",
+                                       "url":  "mortals-backend-g6dtyqneq-braamakamaras-projects.vercel.app",
+                                       "userId":  "TkuXyCUhJTWm55FINgvDSNI6",
+                                       "withCache":  false,
+                                       "buildingAt":  1765000403395,
+                                       "readyAt":  1765000415110,
+                                       "previewCommentsEnabled":  true,
+                                       "oidcTokenClaims":  {
+                                                               "sub":  "owner:braamakamaras-projects:project:mortals-backend:environment:production",
+                                                               "iss":  "https://oidc.vercel.com/braamakamaras-projects",
+                                                               "scope":  "owner:braamakamaras-projects:project:mortals-backend:environment:production",
+                                                               "aud":  "https://vercel.com/braamakamaras-projects",
+                                                               "owner":  "braamakamaras-projects",
+                                                               "owner_id":  "team_9ZEtzQILvj1KzFecmfSkNtrA",
+                                                               "project":  "mortals-backend",
+                                                               "project_id":  "prj_r5hT1LkI2C3VWg4NcWh1LIeLrT5d",
+                                                               "environment":  "production",
+                                                               "plan":  "hobby"
+                                                           }
+                                   }
+                },
+    "deploymentExpiration":  {
+                                 "expirationDays":  180,
+                                 "expirationDaysProduction":  365,
+                                 "expirationDaysCanceled":  30,
+                                 "expirationDaysErrored":  90,
+                                 "deploymentsToKeep":  10
+                             },
+    "protectionBypass":  {
+                             "ArdOUCL5sg2xYN4AivqGVYJvcPsvWKVk":  {
+                                                                      "createdAt":  1765007313335,
+                                                                      "createdBy":  "TkuXyCUhJTWm55FINgvDSNI6",
+                                                                      "scope":  "automation-bypass"
+                                                                  }
+                         },
+    "features":  {
+                     "webAnalytics":  false
+                 }
+}
