@@ -208,10 +208,4 @@ export const moralPresenceService = {
   }
 };
 
-export {
-  presenceIndexService,
-  continuityTrackerService,
-  ethicalNudgeService,
-  ethicalReflectionService,
-  moralPresenceService
-};
+// Named exports declared above; no additional export block needed to avoid duplication

@@ -37,6 +37,8 @@ import ContinuityTrackerModal from "./components/ContinuityTrackerModal";
 import MoralPresenceModal from "./components/MoralPresenceModal";
 import EthicalNudgeModal from "./components/EthicalNudgeModal";
 import EthicalReflectionModal from "./components/EthicalReflectionModal";
+import AIInsightsPanel from "./components/AIInsightsPanel";
+import { aiService } from "./services/aiService";
 
 // UI Components
 function Button({ variant = "default", className = "", ...props }) {
@@ -242,6 +244,13 @@ export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout 
   // Reflection Suite Modals
   const [openModal, setOpenModal] = useState(null); // 'presence', 'continuity', 'moral-presence', 'nudges', 'ethical-reflection', null
 
+  // AI Insights
+  const [aiSummary, setAiSummary] = useState("");
+  const [aiCached, setAiCached] = useState(false);
+  const [aiUpdatedAt, setAiUpdatedAt] = useState(null);
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiError, setAiError] = useState("");
+
   // Core settings
   const [dob, setDob] = useLocalState("mortals.dob", "");
   const [lifespan, setLifespan] = useLocalState("mortals.lifespan", 80);
@@ -315,6 +324,22 @@ export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout 
     "What story should I tell while I can?",
     "Which Credit do I need to settle before I go?",
   ];
+
+  // AI insights handler
+  const handleGenerateInsights = async () => {
+    setAiError("");
+    setAiLoading(true);
+    try {
+      const response = await aiService.fetchInsights();
+      setAiSummary(response.summary || "");
+      setAiCached(!!response.cached);
+      setAiUpdatedAt(response.created_at || new Date().toISOString());
+    } catch (err) {
+      setAiError(err.message || "Failed to generate insights");
+    } finally {
+      setAiLoading(false);
+    }
+  };
 
   // Calculate additional stats for hero section
   const heroStats = useMemo(() => {
@@ -941,6 +966,18 @@ export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout 
             </div>
           )}
         </header>
+
+        {/* AI Insights Panel */}
+        <div className="mt-6">
+          <AIInsightsPanel
+            summary={aiSummary}
+            cached={aiCached}
+            lastUpdated={aiUpdatedAt}
+            loading={aiLoading}
+            error={aiError}
+            onRefresh={handleGenerateInsights}
+          />
+        </div>
 
         
 
