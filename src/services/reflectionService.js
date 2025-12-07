@@ -215,3 +215,11 @@ export default {
   ethicalReflectionService,
   moralPresenceService
 };
+
+export {
+  presenceIndexService,
+  continuityTrackerService,
+  ethicalNudgeService,
+  ethicalReflectionService,
+  moralPresenceService
+};
