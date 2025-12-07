@@ -7,8 +7,7 @@ const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:3001';
 
 // Helper function to get auth token
 function getAuthToken() {
-  const auth = JSON.parse(localStorage.getItem('mortals.auth') || '{}');
-  return auth.token || null;
+  return localStorage.getItem('mortals.auth.token');
 }
 
 // Helper to make authenticated requests
