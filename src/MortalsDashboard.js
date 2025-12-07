@@ -33,6 +33,10 @@ import UserMenu from "./components/UserMenu";
 import ProfileModal from "./components/ProfileModal";
 import MirrorModeButton from "./components/MirrorModeButton";
 import PresenceIndexModal from "./components/PresenceIndexModal";
+import ContinuityTrackerModal from "./components/ContinuityTrackerModal";
+import MoralPresenceModal from "./components/MoralPresenceModal";
+import EthicalNudgeModal from "./components/EthicalNudgeModal";
+import EthicalReflectionModal from "./components/EthicalReflectionModal";
 
 // UI Components
 function Button({ variant = "default", className = "", ...props }) {
@@ -497,18 +501,53 @@ export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout 
                 )}
               </div>
             </div>
-            <div className="flex items-center gap-4">
-              <MirrorModeButton active={false} onToggle={onEnterMirror} />
-              
-              {/* Reflection Suite Button */}
+            {/* Reflection Suite Buttons */}
               <button
                 onClick={() => setOpenModal('presence')}
                 className="flex items-center gap-2 px-3 py-2 rounded-full bg-gradient-to-r from-purple-100 to-indigo-200 shadow hover:from-purple-200 hover:to-indigo-300 transition font-semibold text-sm"
-                title="Open Reflection Suite"
+                title="Open Reflection Suite - Presence"
               >
                 <Heart size={18} className="text-purple-600" />
                 <span className="hidden sm:inline">Presence</span>
               </button>
+
+              <button
+                onClick={() => setOpenModal('continuity')}
+                className="flex items-center gap-2 px-3 py-2 rounded-full bg-gradient-to-r from-emerald-100 to-green-200 shadow hover:from-emerald-200 hover:to-green-300 transition font-semibold text-sm"
+                title="Open Reflection Suite - Continuity"
+              >
+                <TrendingUp size={18} className="text-emerald-600" />
+                <span className="hidden sm:inline">Continuity</span>
+              </button>
+
+              <button
+                onClick={() => setOpenModal('moral-presence')}
+                className="flex items-center gap-2 px-3 py-2 rounded-full bg-gradient-to-r from-rose-100 to-pink-200 shadow hover:from-rose-200 hover:to-pink-300 transition font-semibold text-sm"
+                title="Open Reflection Suite - Moral Presence"
+              >
+                <Zap size={18} className="text-rose-600" />
+                <span className="hidden sm:inline">Consciousness</span>
+              </button>
+
+              <button
+                onClick={() => setOpenModal('nudges')}
+                className="flex items-center gap-2 px-3 py-2 rounded-full bg-gradient-to-r from-amber-100 to-orange-200 shadow hover:from-amber-200 hover:to-orange-300 transition font-semibold text-sm"
+                title="Open Reflection Suite - Ethical Nudges"
+              >
+                <AlertCircle size={18} className="text-amber-600" />
+                <span className="hidden sm:inline">Nudges</span>
+              </button>
+
+              <button
+                onClick={() => setOpenModal('ethical-reflection')}
+                className="flex items-center gap-2 px-3 py-2 rounded-full bg-gradient-to-r from-indigo-100 to-violet-200 shadow hover:from-indigo-200 hover:to-violet-300 transition font-semibold text-sm"
+                title="Open Reflection Suite - Ethical Reflection"
+              >
+                <Sparkles size={18} className="text-indigo-600" />
+                <span className="hidden sm:inline">Reflect</span>
+              </button>
+              
+              <MirrorModeButton active={false} onToggle={onEnterMirror} />
               
               <UserMenu 
                 onLogout={onLogout}
@@ -1224,6 +1263,22 @@ export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout 
       {/* Reflection Suite Modals */}
       <PresenceIndexModal 
         isOpen={openModal === 'presence'} 
+        onClose={() => setOpenModal(null)} 
+      />
+      <ContinuityTrackerModal 
+        isOpen={openModal === 'continuity'} 
+        onClose={() => setOpenModal(null)} 
+      />
+      <MoralPresenceModal 
+        isOpen={openModal === 'moral-presence'} 
+        onClose={() => setOpenModal(null)} 
+      />
+      <EthicalNudgeModal 
+        isOpen={openModal === 'nudges'} 
+        onClose={() => setOpenModal(null)} 
+      />
+      <EthicalReflectionModal 
+        isOpen={openModal === 'ethical-reflection'} 
         onClose={() => setOpenModal(null)} 
       />
       
