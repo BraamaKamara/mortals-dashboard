@@ -3,7 +3,7 @@ import {
   AlertCircle, Calendar, CalendarDays, Clock, Hourglass, Heart, RefreshCcw,
   TimerReset, Zap, CheckCircle2, ListTodo, Plus, Trash2, BarChart2,
   Play, Pause, RotateCcw, Timer, Sparkles, NotebookText, Feather, Crown, Users,
-  Upload, Download, X
+  Upload, Download, X, BookOpen
 } from "lucide-react";
 import MoodTracker from './components/MoodTracker';
 import EmotionHeatmap from './components/EmotionHeatmap';
@@ -24,6 +24,7 @@ import AskMortals from './components/AskMortals';
 import WeeklySynthesis from './components/WeeklySynthesis';
 import PhilosophyCard from './components/PhilosophyCard';
 import DegreesOfSelfSpiral from './components/DegreesOfSelfSpiral';
+import McMahanHub from './components/McMahanHub';
 
 // Utility functions
 function addYears(date, years) {
@@ -227,6 +228,7 @@ function FinalDecadeBand({ dob, endDate, now }) {
 // Main MortalsDashboard component
 export default function MortalsDashboard({ onEnterMirror }) {
   const [now, setNow] = useState(new Date());
+  const [isMcmahanHubOpen, setIsMcmahanHubOpen] = useState(false);
 
   // Core settings
   const [dob, setDob] = useLocalState("mortals.dob", "");
@@ -343,17 +345,31 @@ export default function MortalsDashboard({ onEnterMirror }) {
                 </p>
               </div>
             </div>
-            <button
-              className={`rounded-xl px-4 py-2 text-sm font-medium border-2 transition-all ${
-                isFinal 
-                  ? "border-amber-300 hover:bg-amber-100 text-amber-900" 
-                  : "border-slate-300 hover:bg-slate-100 text-slate-900"
-              }`}
-              onClick={onEnterMirror}
-              title="Enter Mirror Mode"
-            >
-              Mirror Mode
-            </button>
+            <div className="flex gap-3">
+              <button
+                className={`rounded-xl px-4 py-2 text-sm font-medium border-2 transition-all flex items-center gap-2 ${
+                  isFinal 
+                    ? "border-violet-300 hover:bg-violet-100 text-violet-900" 
+                    : "border-violet-300 hover:bg-violet-50 text-violet-900"
+                }`}
+                onClick={() => setIsMcmahanHubOpen(true)}
+                title="Open McMahan Enhancements Hub"
+              >
+                <BookOpen size={18} />
+                McMahan Hub
+              </button>
+              <button
+                className={`rounded-xl px-4 py-2 text-sm font-medium border-2 transition-all ${
+                  isFinal 
+                    ? "border-amber-300 hover:bg-amber-100 text-amber-900" 
+                    : "border-slate-300 hover:bg-slate-100 text-slate-900"
+                }`}
+                onClick={onEnterMirror}
+                title="Enter Mirror Mode"
+              >
+                Mirror Mode
+              </button>
+            </div>
           </div>
 
           {/* Tagline */}
@@ -587,6 +603,9 @@ export default function MortalsDashboard({ onEnterMirror }) {
           Built for gentle urgency. Your inputs and notes are saved locally in your browser.
         </div>
       </div>
+
+      {/* McMahan Hub Modal */}
+      <McMahanHub isOpen={isMcmahanHubOpen} onClose={() => setIsMcmahanHubOpen(false)} />
     </div>
   );
 }
