@@ -9,35 +9,59 @@ export function useSocket(token) {
   useEffect(() => {
     if (!token) return;
 
-    // Create socket connection
-    socketRef.current = io(SOCKET_URL, {
-      autoConnect: true,
-      reconnection: true,
-      reconnectionDelay: 1000,
-      reconnectionDelayMax: 5000,
-      reconnectionAttempts: 5
-    });
+    try {
+      // Create socket connection with CORS error handling
+      socketRef.current = io(SOCKET_URL, {
+        autoConnect: true,
+        reconnection: true,
+        reconnectionDelay: 1000,
+        reconnectionDelayMax: 5000,
+        reconnectionAttempts: 3, // Reduced from 5 to fail faster
+        transports: ['polling'], // Use polling only to avoid WebSocket CORS issues
+      });
 
-    const socket = socketRef.current;
+      const socket = socketRef.current;
 
-    socket.on('connect', () => {
-      console.log('[Socket.io] Connected to server');
-      // Authenticate with JWT token
-      socket.emit('authenticate', token);
-    });
+      socket.on('connect', () => {
+        console.log('[Socket.io] Connected to server');
+        // Authenticate with JWT token
+        try {
+          socket.emit('authenticate', token);
+        } catch (e) {
+          console.warn('[Socket.io] Auth emit failed (non-blocking):', e.message);
+        }
+      });
 
-    socket.on('disconnect', (reason) => {
-      console.log('[Socket.io] Disconnected:', reason);
-    });
+      socket.on('disconnect', (reason) => {
+        console.log('[Socket.io] Disconnected:', reason);
+      });
 
-    socket.on('connect_error', (error) => {
-      console.error('[Socket.io] Connection error:', error);
-    });
+      socket.on('connect_error', (error) => {
+        // Silently log CORS errors - don't break the app
+        if (error?.message?.includes('CORS') || error?.message?.includes('ERR_FAILED')) {
+          console.warn('[Socket.io] Backend unavailable (CORS/connection issue) - app will work offline');
+        } else {
+          console.error('[Socket.io] Connection error:', error);
+        }
+      });
+
+      socket.on('error', (error) => {
+        // Catch socket errors gracefully
+        console.warn('[Socket.io] Socket error (non-blocking):', error);
+      });
+    } catch (e) {
+      // Socket initialization failed - app continues without realtime features
+      console.warn('[Socket.io] Failed to initialize socket.io:', e.message);
+    }
 
     // Cleanup on unmount
     return () => {
-      if (socket) {
-        socket.disconnect();
+      try {
+        if (socketRef.current) {
+          socketRef.current.disconnect();
+        }
+      } catch (e) {
+        console.warn('[Socket.io] Disconnect failed:', e.message);
       }
     };
   }, [token]);
