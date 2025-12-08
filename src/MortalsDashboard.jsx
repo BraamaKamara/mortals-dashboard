@@ -103,11 +103,11 @@ function Stat({ label, value, icon, highlight = false }) {
         : "bg-gray-50 border-gray-200 hover:border-gray-300 hover:shadow-sm"
     }`}>
       <div className="flex items-center gap-2 text-xs text-gray-600 mb-1">
-        {icon && <span className="text-sm">{icon}</span>}
+        {icon && <span className="text-sm flex items-center text-gray-600">{icon}</span>}
         <span className="font-medium">{label}</span>
       </div>
       <div className={`font-bold tabular-nums text-xl ${highlight ? "text-blue-700" : "text-gray-900"}`}>
-        {value ?? "ΓÇö"}
+        {value ?? "--"}
       </div>
     </div>
   );
@@ -777,7 +777,7 @@ export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout,
                 Your Horizon
               </div>
               <h2 className="text-xl md:text-2xl font-bold text-gray-900">Set the frame of your life</h2>
-              <p className="text-sm text-gray-600">Two choices shape everything youΓÇÖll see here: when you began, and how long you intend to live.</p>
+              <p className="text-sm text-gray-600">Two choices shape everything you'll see here: when you began, and how long you intend to live.</p>
             </div>
 
             {/* Inputs */}
@@ -845,7 +845,7 @@ export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout,
                     </button>
                   ))}
                 </div>
-                <p className="text-xs text-gray-500">Tip: 80ΓÇô90 years is common in planning exercises; choose your own horizon.</p>
+                <p className="text-xs text-gray-500">Tip: 80-90 years is common in planning exercises; choose your own horizon.</p>
               </div>
             </div>
 
@@ -857,14 +857,14 @@ export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout,
                 }`}>
                   <span className="opacity-70">Age: </span>
                   <span className="font-semibold">
-                    {life ? (life.elapsed / (365.25 * 24 * 3600 * 1000)).toFixed(2) : "ΓÇö"} yrs
+                    {life ? (life.elapsed / (365.25 * 24 * 3600 * 1000)).toFixed(2) : "--"} yrs
                   </span>
                 </div>
                 <div className={`rounded-xl px-3 py-2 border text-sm ${
                   isFinal ? "bg-amber-50 border-amber-200 text-amber-900" : "bg-white border-slate-200 text-slate-900"
                 }`}>
-                  <span className="opacity-70">≡ƒÄ» Target: </span>
-                  <span className="font-semibold">{endDate ? endDate.toLocaleDateString() : "ΓÇö"}</span>
+                  <span className="opacity-70">Target: </span>
+                  <span className="font-semibold">{endDate ? endDate.toLocaleDateString() : "--"}</span>
                 </div>
                 <div className={`rounded-xl px-3 py-2 border text-sm ${
                   isFinal ? "bg-amber-50 border-amber-200 text-amber-900" : "bg-white border-slate-200 text-slate-900"
@@ -1094,38 +1094,43 @@ export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout,
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <Stat label="Years Remaining" value={yearsLeftLabel} icon="≡ƒôà" highlight={true} />
+                <Stat
+                  label="Years Remaining"
+                  value={yearsLeftLabel}
+                  icon={<Hourglass className="w-4 h-4 text-indigo-600" />}
+                  highlight={true}
+                />
                 
                 {/* Seconds Left */}
                 <div className="rounded-2xl p-4 border transition-all duration-300 bg-gradient-to-br from-purple-50 to-pink-50 border-purple-200 hover:border-purple-300 hover:shadow-md">
                   <div className="flex items-center gap-2 text-xs text-purple-700 mb-1">
-                    <span className="text-sm">ΓÅ▒∩╕Å</span>
+                    <Timer className="w-4 h-4" />
                     <span className="font-medium">Seconds Left</span>
                   </div>
                   <div className="font-bold tabular-nums text-xl text-purple-900">
-                    {secondsLeft?.toLocaleString() ?? "ΓÇö"}
+                    {secondsLeft?.toLocaleString() ?? "--"}
                   </div>
                 </div>
 
                 {/* Target Date */}
                 <div className="rounded-2xl p-4 border transition-all duration-300 bg-gradient-to-br from-emerald-50 to-teal-50 border-emerald-200 hover:border-emerald-300 hover:shadow-md">
                   <div className="flex items-center gap-2 text-xs text-emerald-700 mb-1">
-                    <span className="text-sm">≡ƒÄ»</span>
+                    <CalendarDays className="w-4 h-4" />
                     <span className="font-medium">Target Date</span>
                   </div>
                   <div className="font-bold tabular-nums text-xl text-emerald-900">
-                    {endDate?.toLocaleDateString() ?? "ΓÇö"}
+                    {endDate?.toLocaleDateString() ?? "--"}
                   </div>
                 </div>
 
                 {/* Time Remaining */}
                 <div className="rounded-2xl p-4 border transition-all duration-300 bg-gradient-to-br from-amber-50 to-orange-50 border-amber-200 hover:border-amber-300 hover:shadow-md">
                   <div className="flex items-center gap-2 text-xs text-amber-700 mb-1">
-                    <span className="text-sm">ΓÅ│</span>
+                    <Clock className="w-4 h-4" />
                     <span className="font-medium">Time Remaining</span>
                   </div>
                   <div className="font-bold tabular-nums text-xl text-amber-900">
-                    {exactCountdown ?? "ΓÇö"}
+                    {exactCountdown ?? "--"}
                   </div>
                 </div>
               </div>
