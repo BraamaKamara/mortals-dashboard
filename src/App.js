@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import MortalityAwareness from "./components/MortalityAwareness";
 import PhilosophicalMirror from "./components/PhilosophicalMirror";
-import MortalsDashboard from "./MortalsDashboard.js";
+import MortalsDashboard from "./MortalsDashboard";
 import AuthGate from "./components/AuthGate";
 import EternalBoard from "./components/EternalBoard";
 import MessagesPanel from "./components/MessagesPanel";
