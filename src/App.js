@@ -198,7 +198,7 @@ export default function App() {
         </AnimatePresence>
       </div>
       
-      <MortalityAwareness controlsPosition="top-right" showControls={mirrorOn}>
+      <MortalityAwareness controlsPosition="top-right" showControls={mirrorOn} suppressLegacyChrome={mirrorOn}>
         <AnimatePresence mode="wait">
           {isEntering && (
             <motion.div

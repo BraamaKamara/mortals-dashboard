@@ -63,7 +63,7 @@ function isFinalDecade(age, horizon) {
 }
 
 /* ---------------------- component ---------------------- */
-export default function MortalityAwareness({ children, controlsPosition = "bottom-right", showControls = true }) {
+export default function MortalityAwareness({ children, controlsPosition = "bottom-right", showControls = true, suppressLegacyChrome = false }) {
   const dob = getDOB();
   const ageFromDOB = yearsBetween(dob);
   const [manualAge, setManualAge] = useState(30);
@@ -119,7 +119,7 @@ export default function MortalityAwareness({ children, controlsPosition = "botto
   return (
     <div className={wrapClass}>
       {/* Top slim bar: shows in both legacy and final-decade */}
-      {legacyActive && (
+      {legacyActive && !suppressLegacyChrome && (
         <div className="fixed top-0 left-0 right-0 z-40">
           <div className="mx-auto max-w-6xl px-3">
             <div className="mt-2 rounded-xl border border-amber-300/60 bg-amber-50/80 backdrop-blur text-amber-900 shadow-sm">
@@ -140,7 +140,7 @@ export default function MortalityAwareness({ children, controlsPosition = "botto
       )}
 
       {/* Controls pill (non-intrusive) */}
-      {showControls && (
+      {showControls && !suppressLegacyChrome && (
         <div className={`${positionClass} z-40`} data-testid="mortality-controls-pill">
           <div className="rounded-2xl border bg-white/90 backdrop-blur px-3 py-2 shadow-sm">
             <div className="flex items-center gap-2 text-xs">
