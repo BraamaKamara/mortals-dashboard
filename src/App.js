@@ -22,6 +22,7 @@ export default function App() {
   const [showMessages, setShowMessages] = useState(false);
   const [showBookmarks, setShowBookmarks] = useState(false);
   const [showAdmin, setShowAdmin] = useState(false);
+  const [showEternalBoard, setShowEternalBoard] = useState(false);
 
   const handleAuthenticated = (authData) => {
     setAuthMode(authData.mode);
@@ -125,10 +126,12 @@ export default function App() {
     window.openMessagesPanel = () => setShowMessages(true);
     window.openBookmarksView = () => setShowBookmarks(true);
     window.openAdminDashboard = () => setShowAdmin(true);
+    window.openEternalBoard = () => setShowEternalBoard(true);
     return () => {
       delete window.openMessagesPanel;
       delete window.openBookmarksView;
       delete window.openAdminDashboard;
+      delete window.openEternalBoard;
     };
   }, []);
 
@@ -163,7 +166,7 @@ export default function App() {
   return (
     <>
       {/* Eternal Board available everywhere after authentication */}
-      <EternalBoard />
+      <EternalBoard open={showEternalBoard} onClose={() => setShowEternalBoard(false)} />
       
       {/* Feature Panels */}
       {showMessages && <MessagesPanel onClose={() => setShowMessages(false)} />}
@@ -303,6 +306,7 @@ export default function App() {
               onEnterMirror={handleEnterMirror} 
               currentUser={currentUser} 
               onLogout={handleLogout}
+              onOpenEternalBoard={() => setShowEternalBoard(true)}
             />
           </motion.div>
         ) : null}

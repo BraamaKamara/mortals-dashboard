@@ -236,7 +236,7 @@ function FinalDecadeBand({ dob, endDate, now }) {
 }
 
 // Main MortalsDashboard component
-export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout }) {
+export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout, onOpenEternalBoard }) {
   const [now, setNow] = useState(new Date());
   const [isStillnessOpen, setIsStillnessOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -588,6 +588,15 @@ export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout 
               >
                 <BookOpen size={18} className="text-violet-600" />
                 <span className="hidden sm:inline">McMahan</span>
+              </button>
+
+              <button
+                onClick={onOpenEternalBoard}
+                className="flex items-center gap-2 px-3 py-2 rounded-full bg-gradient-to-r from-amber-100 to-amber-200 shadow hover:from-amber-200 hover:to-amber-300 transition font-semibold text-sm"
+                title="Open Eternal Board - Share Your Wisdom"
+              >
+                <Sparkles size={18} className="text-amber-600" />
+                <span className="hidden sm:inline">Eternal Board</span>
               </button>
 
               <UserMenu 

@@ -349,8 +349,15 @@ function Parchment({ children, className = "", shape = "default", active = false
   );
 }
 
-export default function EternalBoard() {
+export default function EternalBoard({ open: openProp, onClose }) {
   const [open, setOpen] = useState(false);
+  
+  // Sync with prop
+  useEffect(() => {
+    if (openProp !== undefined) {
+      setOpen(openProp);
+    }
+  }, [openProp]);
   const [plan, setPlan] = useState(() => {
     try { return localStorage.getItem('mortals.subscription.plan') || 'free'; } catch { return 'free'; }
   });
@@ -1190,43 +1197,6 @@ export default function EternalBoard() {
 
   return (
     <>
-      {/* Floating opener - Epic and Mystical */}
-      <motion.div 
-        className="fixed right-6 bottom-6 z-[9999]"
-        initial={{ scale: 0, rotate: -180 }}
-        animate={{ scale: 1, rotate: 0 }}
-        transition={{ type: "spring", stiffness: 150, damping: 15, delay: 0.5 }}
-      >
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          {/* Pulsing glow ring */}
-          <motion.div
-            className="absolute inset-0 rounded-2xl blur-xl"
-            animate={{ 
-              scale: [1, 1.3, 1],
-              opacity: [0.5, 0.8, 0.5]
-            }}
-            transition={{ duration: 3, repeat: Infinity }}
-            style={{ background: "radial-gradient(circle, rgba(251,191,36,0.6), rgba(168,85,247,0.4), transparent)" }}
-          />
-          
-          <button
-            onClick={() => setOpen(true)}
-            className="relative inline-flex items-center gap-3 rounded-2xl border-2 border-amber-400/70 bg-gradient-to-br from-purple-900 via-indigo-900 to-purple-950 px-6 py-3.5 text-lg font-bold text-amber-100 shadow-2xl backdrop-blur transition-all hover:border-amber-300 hover:shadow-amber-500/30"
-          >
-            <motion.div
-              animate={{ rotate: [0, 360] }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            >
-              <Sparkles className="w-6 h-6 text-amber-400 drop-shadow-[0_0_6px_rgba(251,191,36,0.8)]" />
-            </motion.div>
-            <span className="tracking-wide drop-shadow-lg">Eternal Board</span>
-          </button>
-        </motion.div>
-      </motion.div>
-
       {/* Overlay */}
       <AnimatePresence>
         {open && (
@@ -1298,7 +1268,7 @@ export default function EternalBoard() {
                 >
                   <Cog className="w-5 h-5" />
                 </button>
-                <GlowButton className="px-3 py-2" onClick={() => setOpen(false)}>
+                <GlowButton className="px-3 py-2" onClick={() => { setOpen(false); if (onClose) onClose(); }}>
                   <X className="w-5 h-5" /> Close
                 </GlowButton>
               </div>
