@@ -229,6 +229,11 @@ function FinalDecadeBand({ dob, endDate, now }) {
 export default function MortalsDashboard({ onEnterMirror }) {
   const [now, setNow] = useState(new Date());
   const [isMcmahanHubOpen, setIsMcmahanHubOpen] = useState(false);
+  
+  // Debug: Verify McMahan Hub is loaded
+  React.useEffect(() => {
+    console.log('🔷 MortalsDashboard.jsx loaded - McMahan Hub available');
+  }, []);
 
   // Core settings
   const [dob, setDob] = useLocalState("mortals.dob", "");
