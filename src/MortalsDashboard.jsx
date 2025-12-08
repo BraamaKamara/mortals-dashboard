@@ -230,9 +230,9 @@ export default function MortalsDashboard({ onEnterMirror }) {
   const [now, setNow] = useState(new Date());
   const [isMcmahanHubOpen, setIsMcmahanHubOpen] = useState(false);
   
-  // Debug: Verify McMahan Hub is loaded
+  // Debug: Verify McMahan Hub is loaded [FORCED REBUILD]
   React.useEffect(() => {
-    console.log('🔷 MortalsDashboard.jsx loaded - McMahan Hub available');
+    console.log('🔷 MortalsDashboard.jsx loaded - McMahan Hub available [FORCED REBUILD]');
   }, []);
 
   // Core settings
