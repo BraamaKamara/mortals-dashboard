@@ -1386,17 +1386,6 @@ export default function PhilosophicalMirror({ onExit }) {
         <X className="w-6 h-6 text-white" />
       </button>
 
-      <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-2 z-50">
-        {screens.map((_, i) => (
-          <div
-            key={i}
-            className={`w-2 h-2 rounded-full transition-all ${
-              i === screen ? "bg-white w-8" : "bg-white/30"
-            }`}
-          />
-        ))}
-      </div>
-
       {screen > 0 && (
         <motion.button
           initial={{ opacity: 0, x: -20 }}
