@@ -50,13 +50,25 @@ self.addEventListener('fetch', (event) => {
   // Skip non-GET requests
   if (request.method !== 'GET') return;
 
-  // Skip API requests (always go to network)
+  // Skip socket.io and other backend API calls - let them fail silently
+  if (url.pathname.startsWith('/socket.io/') || url.hostname !== url.hostname.split('.')[0] + '.com') {
+    event.respondWith(
+      fetch(request)
+        .catch(() => {
+          // Silently fail for socket.io and CORS errors - don't break the page
+          return new Response('', { status: 204 });
+        })
+    );
+    return;
+  }
+
+  // Skip other API requests (always go to network)
   if (url.pathname.startsWith('/api/')) {
     return;
   }
 
   // Network-first strategy for HTML
-  if (request.headers.get('accept').includes('text/html')) {
+  if (request.headers.get('accept')?.includes('text/html')) {
     event.respondWith(
       fetch(request)
         .then((response) => {
@@ -87,11 +99,16 @@ self.addEventListener('fetch', (event) => {
             });
           }
           return response;
+        })
+        .catch(() => {
+          // Return empty response for failed fetch, don't throw
+          return new Response('', { status: 204 });
         });
       })
       .catch(() => {
         // Fallback for offline
         console.log('[Service Worker] Fetch failed, serving offline fallback');
+        return new Response('', { status: 204 });
       })
   );
 });
