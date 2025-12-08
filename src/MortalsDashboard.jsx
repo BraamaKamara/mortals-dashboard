@@ -23,8 +23,6 @@ import DepartureJournal from "./components/DepartureJournal";
 import CircleInfluence from "./components/CircleInfluence";
 import EpitaphGenerator from "./components/EpitaphGenerator";
 import GratitudeLedger from "./components/GratitudeLedger";
-import AskMortals from "./components/AskMortals";
-import WeeklySynthesis from "./components/WeeklySynthesis";
 import Reflector from "./components/Reflector";
 import DailyWeeklyJars from "./components/DailyWeeklyJars_canonical";
 import LifeReel from "./components/LifeReel";
@@ -1280,12 +1278,7 @@ export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout,
           <Reflector />
         </div>
         
-        <div ref={navSections[4].ref}> {/* Wisdom & Insights */}
-          <AskMortals />
-          <WeeklySynthesis />
-        </div>
-        
-        <div ref={navSections[5].ref}> {/* Connections */}
+        <div ref={navSections[4].ref}> {/* Connections */}
           <GratitudeLedger />
           <CircleInfluence isFinal={isFinal} />
         </div>
