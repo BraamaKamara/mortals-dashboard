@@ -19,7 +19,6 @@ import MemoryCapsule from "./components/MemoryCapsule";
 import StorylineArc from "./components/StorylineArc";
 import LifeReviewTimeline from "./components/LifeReviewTimeline";
 import ValuesCompass from "./components/ValuesCompass";
-import ExistenceCurves from "./components/ExistenceCurves";
 import DepartureJournal from "./components/DepartureJournal";
 import CircleInfluence from "./components/CircleInfluence";
 import EpitaphGenerator from "./components/EpitaphGenerator";
@@ -1301,7 +1300,6 @@ export default function MortalsDashboard({ onEnterMirror, currentUser, onLogout,
         
         <div ref={navSections[7].ref}> {/* Mortality Curves */}
           <MortalityCurves />
-          <ExistenceCurves isFinal={isFinal} />
         </div>
         
         <ValuesCompass accent={isFinal ? "gold" : "gray"} />
