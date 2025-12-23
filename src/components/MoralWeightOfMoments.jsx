@@ -22,13 +22,22 @@ export default function MoralWeightOfMoments({ date = null }) {
           return;
         }
         const targetDate = date || new Date().toISOString().split('T')[0];
-        const resp = await fetch(`${API_BASE}/api/reflection/moral-weight/${targetDate}`, {
+        const url = `${API_BASE}/api/reflection/moral-weight/${targetDate}`;
+        console.log('[MoralWeight] Fetching:', url);
+        const resp = await fetch(url, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
-        if (!resp.ok) throw new Error('Failed to fetch moral weight');
+        console.log('[MoralWeight] Response status:', resp.status);
+        if (!resp.ok) {
+          const errorText = await resp.text();
+          console.error('[MoralWeight] Error response:', errorText);
+          throw new Error(`Failed to fetch (${resp.status}): ${errorText}`);
+        }
         const json = await resp.json();
+        console.log('[MoralWeight] Data received:', json);
         setData(json);
       } catch (e) {
+        console.error('[MoralWeight] Fetch error:', e);
         setError(e.message || 'Error');
       } finally {
         setLoading(false);
@@ -38,7 +47,12 @@ export default function MoralWeightOfMoments({ date = null }) {
   }, [API_BASE, date]);
 
   if (loading) return <div className="p-4 text-sm text-gray-600">Calculating your consciousness quality…</div>;
-  if (error) return <div className="p-4 text-sm text-gray-600">⚠️ {error}</div>;
+  if (error) return (
+    <div className="p-4">
+      <div className="text-sm text-red-600 mb-2">⚠️ {error}</div>
+      <div className="text-xs text-gray-500">Check browser console (F12) for details. This feature requires presence tracking data.</div>
+    </div>
+  );
   if (!data) return <div className="p-4 text-sm text-gray-600">No data</div>;
 
   const dist = data.summary?.distribution || {};
