@@ -22,7 +22,7 @@ export default function MoralWeightOfMoments({ date = null }) {
           return;
         }
         const targetDate = date || new Date().toISOString().split('T')[0];
-        const url = `${API_BASE}/api/reflection/moral-weight/${targetDate}`;
+        const url = `${API_BASE}/reflection/moral-weight/${targetDate}`;
         console.log('[MoralWeight] Fetching:', url);
         const resp = await fetch(url, {
           headers: { 'Authorization': `Bearer ${token}` }

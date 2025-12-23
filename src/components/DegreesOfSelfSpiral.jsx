@@ -39,7 +39,7 @@ export default function DegreesOfSelfSpiral({ date = null, onRefresh = null }) {
 
         const targetDate = date || new Date().toISOString().split('T')[0];
 
-        const response = await fetch(`${API_BASE}/api/reflection/identity-spiral/${targetDate}`, {
+        const response = await fetch(`${API_BASE}/reflection/identity-spiral/${targetDate}`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -71,7 +71,7 @@ export default function DegreesOfSelfSpiral({ date = null, onRefresh = null }) {
         const token = localStorage.getItem('mortals.auth.token');
         if (!token) return;
 
-        const response = await fetch(`${API_BASE}/api/reflection/identity-spiral-trend?days=30`, {
+        const response = await fetch(`${API_BASE}/reflection/identity-spiral-trend?days=30`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
