@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, BookOpen, Lightbulb, Brain, Clock, Zap, TrendingUp, Compass } from 'lucide-react';
 import DegreesOfSelfSpiral from './DegreesOfSelfSpiral';
+import MoralWeightOfMoments from './MoralWeightOfMoments';
 import './McMahanHub.css';
 
 /**
@@ -45,10 +46,10 @@ export default function McMahanHub({ isOpen, onClose }) {
       id: 'moments',
       name: 'Moral Weight',
       icon: TrendingUp,
-      status: 'COMING',
-      badge: '→',
+      status: 'COMPLETE',
+      badge: '✓',
       description: 'Quality of consciousness per hour',
-      component: <ComingSoon name="Moral Weight of Moments" />
+      component: <MoralWeightOfMoments />
     },
     {
       id: 'thresholds',
